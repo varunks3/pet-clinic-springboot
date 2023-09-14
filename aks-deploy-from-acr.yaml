@@ -1,0 +1,73 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: springbootpetclinic-deployment
+# spec:
+#   replicas: 3
+#   selector:
+#     matchLabels:
+#       app: springbootpetclinic
+#   template:
+#     metadata:
+#       labels:
+#         app: springbootpetclinic
+#     spec:
+#       containers:
+#       - name: springbootpetclinic
+#         resources:
+#             limits:
+#               memory: "128Mi"
+#               cpu: "500m"
+#         image: springbootpetclinic.azurecr.io/springbootpetclinic:latest
+#         imagePullPolicy: Always
+#         ports:
+#         - containerPort: 8080
+# # service type
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: springbootpetclinic-service
+# spec:
+#   selector:
+#     app: springbootpetclinic
+#   ports:
+#   - protocol: TCP
+#     port: 8080
+#     targetPort: 8080
+#   type: LoadBalancer
+# ---
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: springbootpetclinic
+# spec:
+#   selector:
+#     matchLabels:
+#       app: springbootpetclinic
+#   template:
+#     metadata:
+#       labels:
+#         app: springbootpetclinic
+#     spec:
+#       containers:
+#       - name: springbootpetclinic
+#         image: springbootpetclinic.azurecr.io/springbootpetclinic:latest
+#         imagePullPolicy: Always
+#         resources:
+#           limits:
+#             memory: "128Mi"
+#             cpu: "500m"
+#         ports:
+#         - containerPort: 8080
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: springbootpetclinic
+# spec:
+#   selector:
+#     app: springbootpetclinic
+#   ports:
+#   - port: 8080
+#     targetPort: 8080
+#   type: LoadBalancer
