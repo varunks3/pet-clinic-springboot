@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: springboothelmacr.azurecr.io/springbootpetclinic
+  repository: springboothelmacr.azurecr.io/varunks3/springbootpetclinic
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
