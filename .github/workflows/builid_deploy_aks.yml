@@ -34,4 +34,4 @@ jobs:
           service-name: codingsaintsvc
           app-name: springdemo
           use-staging-deployment: false
-          package: ${{ env.ASC_PACKAGE_PATH }}/**/*.jar
+          package: ${{ env.ASC_PACKAGE_PATH }}/**/sp*.jar
