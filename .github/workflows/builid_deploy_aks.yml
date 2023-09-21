@@ -31,7 +31,7 @@ jobs:
         with:
           azure-subscription: ${{ env.AZURE_SUBSCRIPTION }}
           action: Deploy
-          service-name: codingsaintsvc
+          service-name: myresourcegroup
           app-name: springdemo
           use-staging-deployment: false
           package: ${{ env.ASC_PACKAGE_PATH }}/**/sp*.jar
