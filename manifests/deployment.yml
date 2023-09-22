@@ -17,6 +17,7 @@ spec:
         image: springbootpetclinicacr.azurecr.io/petclinic:latest
         ports:
         - containerPort: 8080
+
 ---
 apiVersion: v1
 kind: Service
